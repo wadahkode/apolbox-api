@@ -11,7 +11,7 @@ func main() {
 	log.SetPrefix("Data: ")
 	log.SetFlags(0)
 
-	msg, err := Data.Add("John smack")
+	msg, err := Data.Create("miyabi")
 
 	if err != nil {
 		log.Fatal(err)

@@ -5,13 +5,12 @@ import (
 	"fmt"
 )
 
-func Add(args string) (string, error) {
-
+func Create(args string) (string, error) {
 	if args == "" {
-		return "", errors.New("tidak ada data yang ditambahkan")
+		return "", errors.New("no input data")
 	}
 
-	msg := fmt.Sprintf("Data %v berhasil ditambahkan.", args)
+	message := fmt.Sprintf("success add data %v", args)
 
-	return msg, nil
+	return message, nil
 }
