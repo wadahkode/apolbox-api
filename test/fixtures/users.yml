@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_unique: MyString
+  username: MyString
+  email: MyString
+  email_verification: MyString
+  password: MyString
+  password_verification: MyString
+  remember_me: false
+  status_online: 2022-10-29 18:52:38
+
+two:
+  id_unique: MyString
+  username: MyString
+  email: MyString
+  email_verification: MyString
+  password: MyString
+  password_verification: MyString
+  remember_me: false
+  status_online: 2022-10-29 18:52:38
