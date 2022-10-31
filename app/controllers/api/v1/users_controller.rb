@@ -1,6 +1,9 @@
 module Api
   module V1
     class UsersController < ApplicationController
+      # http_basic_authenticate_with name: "admin", password: "secret"
+      before_action :restrict_access
+
       def index
         @user = User.all
         render json: @user
@@ -8,8 +11,12 @@ module Api
 
       def show
         @user = User.find(params[:id])
-        render json: @user
+
+        if stale?(last_modified: @user.updated_at)
+          render json: @user
+        end
       end
+
 
       def create
         @user = User.new(user_params)
@@ -45,6 +52,12 @@ module Api
       private
         def user_params
           params.require(:user).permit(:id_unique, :username, :email, :email_verification, :password, :password_verification, :remember_me, :status_online)
+        end
+
+      private
+        def restrict_access
+          api_key = ApiKey.find_by_access_token(params[:access_token])
+          head :unauthorized unless api_key
         end
     end
   end
