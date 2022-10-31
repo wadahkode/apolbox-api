@@ -33,5 +33,3 @@
 /config/master.key
 
 .env
-Gemfile.lock
-Gemfile.lock.bak
