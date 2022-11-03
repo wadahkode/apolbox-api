@@ -1,7 +1,6 @@
 module Api
   module V1
     class UsersController < ApplicationController
-      # access_token = 376b4fe5c64b00c77d6b138304606eb0
       before_action :restrict_access
 
       def index
