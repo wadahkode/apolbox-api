@@ -50,7 +50,7 @@ module Api
 
       private
         def user_params
-          params.require(:user).permit(:id_unique, :username, :email, :email_verification, :password, :password_verification, :remember_me, :status_online)
+          params.require(:user).permit(:id_unique, :username, :email, :email_verify, :password, :password_verify, :remember_me)
         end
 
       private
