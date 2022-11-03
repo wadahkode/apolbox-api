@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: apolbox_production
-  username: apolbox
+  database: <%= ENV["APOLBOX_DATABASE"] %>
+  username: <%= ENV["APOLBOX_DATABASE_USERNAME"] %>
   password: <%= ENV["APOLBOX_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
