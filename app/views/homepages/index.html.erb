@@ -1,0 +1,50 @@
+<%= render partial: "/layouts/app" %>
+
+<div class="container">
+  <h1>Selamat datang di Apolbox Restful API.</h1>
+  <p>Daftar kumpulan restful api : </p>
+
+  <ul>
+    <li>
+      <b>Users</b>
+
+      <table cellspacing="0" cellpadding="0" border="1">
+        <thead>
+          <th>METHOD</th>
+          <th>URL</th>
+          <th>ACTION</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GET</td>
+            <td><a href="<%= get_all %>"><%= get_all %></a></td>
+            <td>GET ALL</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td><a href="<%= get_by_id %>"><%= get_by_id %></a></td>
+            <td>GET BY ID</td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td><a href="<%= create %>"><%= create %></a></td>
+            <td>CREATE</td>
+          </tr>
+          <tr>
+            <td>PUT</td>
+            <td><a href="<%= update %>"><%= update %></a></td>
+            <td>UPDATE</td>
+          </tr>
+          <tr>
+            <td>DELETE</td>
+            <td><a href="<%= delete %>"><%= delete %></a></td>
+            <td>DELETE</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+
+  <i>Noted: Access token saat ini belum tersedia untuk publik.</i>
+</div>
+

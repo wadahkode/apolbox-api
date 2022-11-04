@@ -4,12 +4,12 @@ module Api
       before_action :restrict_access
 
       def index
-        @user = User.all
+        @user = User.all.select(:id, :username, :email, :remember_me, :created_at, :updated_at)
         render json: @user
       end
 
       def show
-        @user = User.find(params[:id])
+        @user = User.select(:id, :username, :email, :remember_me, :created_at, :updated_at).find(params[:id])
 
         if stale?(last_modified: @user.updated_at)
           render json: @user
@@ -50,7 +50,7 @@ module Api
 
       private
         def user_params
-          params.require(:user).permit(:id_unique, :username, :email, :email_verify, :password, :password_verify, :remember_me)
+          params.require(:user).permit(:username, :email, :email_verify, :password, :password_verify, :remember_me)
         end
 
       private
