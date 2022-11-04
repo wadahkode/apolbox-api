@@ -10,7 +10,7 @@ class HomepagesController < ActionController::Base
   helper_method :delete
 
   def req
-    ActionDispatch::Request.new 'HTTP_HOST' => ENV['APPLICATION_HOST'] || 'localhost:3000'
+    ActionDispatch::Request.new 'HTTP_HOST' || 'HTTPS_HOST' => ENV['APPLICATION_HOST'] || 'localhost:3000'
   end
 
   def get_all
